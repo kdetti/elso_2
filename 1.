@@ -1,0 +1,86 @@
+import sys
+import numpy as np
+
+
+l=[1,2,4]
+print(l*2)
+print(l+[11,12])
+l[0]=22
+print(l)
+valami=(2,3,1)
+print(type(valami))
+print(valami[1])
+
+sys.exit()
+
+
+
+
+
+
+a_elso = np.array([[1,2,3],[4,5,6]])
+
+print(a_elso)
+print(2*a_elso)
+sys.exit()
+
+
+a=2.1
+if a<2:
+    print('nagyobb mint 2')
+else:
+    print('nem nagyobb mint 2')
+
+c=[1,2,"hello",4,5,6]
+
+for element in c:
+    print(element)
+
+d_a={'eletkor':2, 'nev':'noe'}
+print(d_a.keys())
+print(list(d_a.keys()))
+print(d_a.values())
+print(d_a.items())
+
+for key, value in d_a.items():
+    print(key, value)
+    print(value)
+
+for i in range(10):
+    print(i)
+
+sys.exit()
+
+b='szia'
+c=[1,2,"hello",4,5,6]
+d_a={'eletkor':2, 'nev':'noe'}
+
+a=a+1
+#a+=1 ugyanaz
+a=a+c[0]
+print(a)
+sys.exit(0)
+
+print(c)
+print(c[0])
+print(c[-1])
+print(c[-2])
+print(c[-3:])
+
+print(type(a))
+print(type(c))
+print(c)
+print(type(d_a))
+print(d_a['nev'])
+
+#print('HELLO VILAG')
+#print(a)
+#print(b)
+
+def elso_fv(a,b):
+    a=a+1
+    return a+b
+
+print(elso_fv(3,4))
+
+
