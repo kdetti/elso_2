@@ -1,0 +1,98 @@
+import numpy as np
+import matplotlib.pyplot as plt
+#show context action- így instalál egy packaget
+
+#fügvény: összeadni két számot
+def fv(a,b):
+    return a+b
+print(fv(2,3))
+#def add_nums(a,b=0)
+ #LEMARADTAM!!!
+
+
+a=np.array([[1,2],[3,4]])
+b=a-2
+print(type(a))
+print(b)
+
+#hozamok
+r_eff=np.array([[0.1,0.2],[0.3,0.4],[0.5,0.6]])
+ic=np.exp(r_eff)    #exp
+print(ic)
+ic_2y=ic**2   #négyzetreemelés
+r_2y=np.log(ic_2y)  #logaritmus
+print(r_2y)
+
+#dimenziója (egy mátrixnak)
+print(r_eff.shape)
+
+a_elso=np.array([[10,2],[2,5],[2,8]])
+print(a_elso)
+#atlag,összeg,kummulálás,mun,max
+print(np.sum(a_elso))
+print(np.sum(a_elso,axis=0))
+print(np.sum(a_elso,axis=1))  #soronkénti
+print(np.mean(a_elso,axis=0))   #oszloponkénti
+print(np.std(a_elso,axis=0))
+print(np.min(a_elso,axis=0))
+print(np.max(a_elso,axis=0))
+b_diff=np.diff(a_elso,axis=1)
+print(b_diff.shape)
+print(b_diff)
+
+#centralizálás
+c=a_elso-np.mean(a_elso)
+print(c)
+print(np.mean(c))
+print(c.mean())
+
+#True/Fale indexálás
+is_pos=c>0
+print(is_pos)
+
+#change elements of array based on condition
+d=c
+d[is_pos]=d[is_pos]+100  #ha a negativakhoz akarok adni ~is_pos
+print(d)
+print(c)
+
+#szórás
+a_new=np.array([[2,2],[2,4],[0,4]])
+print(a_new.std(axis=1))
+print(a_new.std(axis=1,ddof=0))   #degrees off freedom
+print(a_new.std(axis=1,ddof=1))
+
+#random numbers
+a_rnd=np.random.random((3,2))
+print(a_rnd)
+
+#randon.seed
+np.random.seed(112)  #fixálja a random számokat
+a_rnd_uniform=np.random.random((3,2))
+print(a_rnd_uniform)
+a_rnd_normal=np.random.normal([1,8.2],[1,1],(10,2))
+print(a_rnd_normal)
+
+#egy részvény 100 realizációja
+    #mu 5% 10%
+    #szig 10% 20%
+a_r=np.random.normal([0.05,0.1],[0.1,0.2],(100,2))
+print(a_r)
+a_initial_price=np.array([[10,100]])
+print(a_initial_price.shape)
+a_price=a_initial_price*np.exp(a_r)
+print(a_price)
+
+#histogram
+plt.hist(a_price[:,0], bins=100)
+plt.hist(a_price[:,1], bins=100)
+plt.figure
+plt.scatter(a_price[:,0],a_price[:,1])
+plt.show()
+
+#LIST COMPReHeNSION
+l_uj=[x*2 for x in range(5)]
+print(l_uj)
+
+
+
